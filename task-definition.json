@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:494916940353:task-definition/contadorthegrefg-taskdefinition:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:494916940353:task-definition/Contadorthegrefg-taskdefinition:3",
     "containerDefinitions": [
         {
-            "name": "Contador-container",
-            "image": "494916940353.dkr.ecr.us-east-1.amazonaws.com/amina/contadorthegrefg:latest",
+            "name": "contadorthegrefg-container",
+            "image": "494916940353.dkr.ecr.us-east-1.amazonaws.com/amina/contadorthegrefg:5d8765bd26baad568091e1c94345a18902f9b547",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "contador-container-80-tcp",
+                    "name": "contadorthegrefg-container-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -16,28 +16,25 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/contadorthegrefg-taskdefinition",
+                    "awslogs-group": "/ecs/Contadorthegrefg-taskdefinition",
                     "awslogs-create-group": "true",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             },
             "systemControls": []
         }
     ],
-    "family": "contadorthegrefg-taskdefinition",
+    "family": "Contadorthegrefg-taskdefinition",
     "taskRoleArn": "arn:aws:iam::494916940353:role/LabRole",
     "executionRoleArn": "arn:aws:iam::494916940353:role/LabRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -72,8 +69,8 @@
     "placementConstraints": [],
     "compatibilities": [
         "EC2",
-        "FARGATE",
-        "MANAGED_INSTANCES"
+        "MANAGED_INSTANCES",
+        "FARGATE"
     ],
     "requiresCompatibilities": [
         "FARGATE"
@@ -84,7 +81,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2026-03-05T09:42:38.746Z",
+    "registeredAt": "2026-03-05T10:03:40.447Z",
     "registeredBy": "arn:aws:sts::494916940353:assumed-role/voclabs/user3644816=AMINA_ESSALHI",
     "tags": []
 }
