@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "contadorthegrefg-container",
-            "image": "494916940353.dkr.ecr.us-east-1.amazonaws.com/amina/contadorthegrefg/",
+            "image": "494916940353.dkr.ecr.us-east-1.amazonaws.com/amina/contadorthegrefg@sha256:6faa6e1c798e9cb07fd7e90f44902cd13b4aa155b3fbbe8a615e97a103300a97",
             "cpu": 0,
             "portMappings": [
                 {
