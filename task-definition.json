@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:494916940353:task-definition/Contadorthegrefg-taskdefinition:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:494916940353:task-definition/test2-taskdefinition:1",
     "containerDefinitions": [
         {
-            "name": "contadorthegrefg-container",
+            "name": "test2-container",
             "image": "494916940353.dkr.ecr.us-east-1.amazonaws.com/amina/contadorthegrefg",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "contadorthegrefg-container-80-tcp",
+                    "name": "test2-container-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -17,13 +17,19 @@
             "essential": true,
             "environment": [],
             "environmentFiles": [],
-            "mountPoints": [],
+            "mountPoints": [
+                {
+                    "sourceVolume": "test-volume",
+                    "containerPath": "/",
+                    "readOnly": false
+                }
+            ],
             "volumesFrom": [],
             "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/Contadorthegrefg-taskdefinition",
+                    "awslogs-group": "/ecs/test2-taskdefinition",
                     "awslogs-create-group": "true",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
@@ -33,12 +39,17 @@
             "systemControls": []
         }
     ],
-    "family": "Contadorthegrefg-taskdefinition",
+    "family": "test2-taskdefinition",
     "taskRoleArn": "arn:aws:iam::494916940353:role/LabRole",
     "executionRoleArn": "arn:aws:iam::494916940353:role/LabRole",
     "networkMode": "awsvpc",
     "revision": 1,
-    "volumes": [],
+    "volumes": [
+        {
+            "name": "test-volume",
+            "host": {}
+        }
+    ],
     "status": "ACTIVE",
     "requiresAttributes": [
         {
@@ -84,7 +95,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2026-03-05T08:10:00.015Z",
+    "registeredAt": "2026-03-05T09:24:13.260Z",
     "registeredBy": "arn:aws:sts::494916940353:assumed-role/voclabs/user3644816=AMINA_ESSALHI",
     "enableFaultInjection": false,
     "tags": []
